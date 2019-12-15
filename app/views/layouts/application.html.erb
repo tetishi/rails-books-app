@@ -10,8 +10,20 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <%= link_to_if params[:locale].present?, '日本語', url_for(controller: controller.controller_name, action: controller.action_name, locale: '') %>
     <%= link_to_if params[:locale] != 'en', 'English', url_for(controller: controller.controller_name, action: controller.action_name, locale: 'en') %>
+
+    <% if user_signed_in? %>
+      <ul class="navbar-nav">
+        <li class="nav-item"><%= link_to "ホーム", root_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "ユーザー", users_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "編集", edit_user_registration_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+      </ul>
+    <% end %>
 
     <%= yield %>
   </body>
