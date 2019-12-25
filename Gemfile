@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'rails-i18n'
 gem 'kaminari'
+gem 'rubocop', require: false
+gem 'rubocop-performance'
+gem 'rubocop-rails'
