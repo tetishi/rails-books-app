@@ -6,8 +6,7 @@ ja:
       one_page:
         display_entries:
           one: "<b>%{count}</b>レコード表示中です %{entry_name}"
-          other: "<b>%{count}</b>レコード表示中です %{entry_name}"
-          
+          other: "<b>%{count}</b>レコード表示中です %{entry_name}" 
           zero: "レコードが見つかりませんでした %{entry_name}"
   views:
     pagination:
