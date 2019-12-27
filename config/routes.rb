@@ -19,6 +19,14 @@ Rails.application.routes.draw do
       get :timeline, to: "timeline#show"
     end
   end
-  resources :books
+  # resources :books
+  
+  resources :books do
+    resources :comments, module: :books
+  end
+  resources :reports do
+    resources :comments, module: :reports
+  end
+
   resources :friendships, only: [:create, :destroy]
 end
