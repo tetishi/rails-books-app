@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get "sign_out", to: "users/sessions#destroy"
   end
 
+  resources :reports
   resources :users, only: [:show, :index]
   resources :users do
     member do

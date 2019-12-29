@@ -20,7 +20,8 @@
 	<%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<% if @book.user_id == current_user.id %>
+<% #if @book.user_id == current_user.id %>
+<% if current_user == @user %>
   <%= link_to t('activerecord.attributes.book.show'), edit_book_path(@book) %> |
 <% end %>
 <%= link_to t('activerecord.attributes.book.back'), books_path %>

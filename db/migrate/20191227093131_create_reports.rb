@@ -1,9 +1,7 @@
 class CreateReports < ActiveRecord::Migration[6.0]
   def change
     create_table :reports do |t|
-      t.string :commentable_type
-      t.integer :commentable_id
-      t.integer :user_id
+      t.string :title
       t.text :body
 
       t.timestamps

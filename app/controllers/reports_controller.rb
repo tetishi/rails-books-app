@@ -24,7 +24,8 @@ class ReportsController < ApplicationController
   # POST /reports
   # POST /reports.json
   def create
-    @report = Report.new(report_params)
+    @report = Report.new(report_params.merge(user_id: current_user.id))
+    # @report.user_id = current_user.id
 
     respond_to do |format|
       if @report.save
@@ -69,6 +70,6 @@ class ReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:commentable_type, :commentable_id, :user_id, :body)
+      params.require(:report).permit(:title, :body)
     end
 end

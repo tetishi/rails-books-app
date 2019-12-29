@@ -1,18 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Commentable type:</strong>
-  <%= @report.commentable_type %>
-</p>
-
-<p>
-  <strong>Commentable:</strong>
-  <%= @report.commentable_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @report.user_id %>
+  <strong>Title:</strong>
+  <%= @report.title %>
 </p>
 
 <p>
@@ -20,9 +10,10 @@
   <%= @report.body %>
 </p>
 
-<%= link_to 'Edit', edit_report_path(@report) %> |
+<% if @report.user == current_user.id %>
+  <%= link_to 'Edit', edit_report_path(@report) %> |
+<% end %>
 <%= link_to 'Back', reports_path %>
 
-<br>
 <%= render partial: "comments/comments", locals: {commentable: @report} %>
 <%= render partial: "comments/form", locals: {commentable: @report} %>
