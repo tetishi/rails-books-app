@@ -15,9 +15,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on "New Report"
 
     fill_in "Body", with: @report.body
-    fill_in "Commentable", with: @report.commentable_id
-    fill_in "Commentable type", with: @report.commentable_type
-    fill_in "User", with: @report.user_id
+    fill_in "Title", with: @report.title
     click_on "Create Report"
 
     assert_text "Report was successfully created"
@@ -29,9 +27,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Body", with: @report.body
-    fill_in "Commentable", with: @report.commentable_id
-    fill_in "Commentable type", with: @report.commentable_type
-    fill_in "User", with: @report.user_id
+    fill_in "Title", with: @report.title
     click_on "Update Report"
 
     assert_text "Report was successfully updated"
