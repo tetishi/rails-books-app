@@ -7,6 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[github]
 
+  has_one_attached :avatar
+
   def self.create_unique_string
     SecureRandom.uuid
   end
