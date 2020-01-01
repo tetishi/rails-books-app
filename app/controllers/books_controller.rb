@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
   # GET /books.json
   def index
-    BOOK_AMOUNT = 3
-    @books = Book.page(params[:page]).per(BOOK_AMOUNT)
+    @books = Book.page(params[:page])
   end
 
   # GET /books/1
@@ -26,6 +27,7 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
+
     if @book.save
       redirect_to @book, notice: t("activerecord.attributes.book.created")
     else
