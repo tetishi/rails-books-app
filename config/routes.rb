@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get "users/show"
+  root "books#index"
   devise_for :users, controllers: {
     sessions: "users/sessions"
   }
@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index]
-  root "books#index"
   resources :books
 end
