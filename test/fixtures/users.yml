@@ -4,10 +4,10 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+# one: {}
 # column: value
 #
-two: {}
+# two: {}
 # column: value
 
 user1:
@@ -20,3 +20,8 @@ user2:
   zipcode: 3233922
   address: 佐賀県
   profile: 佐賀県出身の山田次郎です。
+user3:
+  email: honda@gmail.com
+  zipcode: 3240932
+  address: 北海道
+  profile: 北海道に住んでいます。
