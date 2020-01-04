@@ -1,10 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  scope "(/:locale)", locale: /en|ja/ do
-    resources :books
+  root "books#index"
+  devise_for :users, controllers: {
+    sessions: "users/sessions"
+  }
+
+  devise_scope :user do
+    get "sign_in", to: "users/sessions#new"
+    get "sign_out", to: "users/sessions#destroy"
   end
 
-  get "/:locale" => "books#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:show, :index]
+  resources :books
 end

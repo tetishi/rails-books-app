@@ -28,6 +28,11 @@ ja:
         created: 本が登録されました
         updated: 本が更新されました
         destroyed: 本が削除されました
+  menu:
+    home: ホーム
+    user: ユーザー
+    edit: 編集
+    logout: ログアウト
   date:
     abbr_day_names:
     - 日
