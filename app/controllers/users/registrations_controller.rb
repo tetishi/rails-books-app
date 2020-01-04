@@ -37,14 +37,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+  def buid_resource(hash = {})
+    hash[:uid] = User.create_unique_string
+    super
+  end
 
   protected
-    # def update_resource(resource, params)
-    #   resource.update_without_password(params)
-    # end
-
     def after_update_path_for(resource)
       user_path(resource)
+    end
+
+    def update_resource(resource, params)
+      resource.update_without_password(params.except("current_password"))
     end
 
   # If you have extra params to permit, append them to the sanitizer.

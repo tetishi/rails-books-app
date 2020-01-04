@@ -63,3 +63,6 @@ gem "devise-i18n"
 gem "rubocop", require: false
 gem "rubocop-performance"
 gem "rubocop-rails"
+gem "omniauth"
+gem "omniauth-github"
+gem "dotenv-rails"
