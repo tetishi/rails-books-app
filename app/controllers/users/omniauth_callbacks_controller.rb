@@ -8,10 +8,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def twitter
   # end
   def github
-    @user = User.find_for_github_oauth(request.env['omniauth.auth'], current_user)
+    @user = User.find_for_github_oauth(request.env["omniauth.auth"], current_user)
     sign_in_and_redirect @user, event: :authentication
     if is_navigational_format?
-      set_flash_message(:notice, :success, kind: 'Github')
+      set_flash_message(:notice, :success, kind: "Github")
     end
   end
 
