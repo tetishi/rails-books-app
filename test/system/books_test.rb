@@ -3,6 +3,8 @@
 require "application_system_test_case"
 
 class BooksTest < ApplicationSystemTestCase
+  include Warden::Test::Helpers
+  
   setup do
     @book = books(:one)
   end
