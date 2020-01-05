@@ -8,4 +8,6 @@
   <dd><%= @user.address %></dd>
   <dt><%= User.human_attribute_name(:profile) %></dt>
   <dd><%= @user.profile %></dd>
+  <dt><%= User.human_attribute_name(:avatar) %></dt>
+  <dd><%= image_tag @user.avatar.variant(resize: "100x100").processed if @user.avatar.attached? %></dd>
 </dl>
