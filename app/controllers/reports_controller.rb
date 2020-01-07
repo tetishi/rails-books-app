@@ -41,7 +41,7 @@ class ReportsController < ApplicationController
   # PATCH/PUT /reports/1
   # PATCH/PUT /reports/1.json
   def update
-    @report.user_id = current_user.id
+    @report.user = current_user
     
     respond_to do |format|
       if @report.update(report_params)
