@@ -30,6 +30,7 @@ ja:
         destroyed: 本が削除されました
   menu:
     home: ホーム
+    timeline: 投稿一覧
     user: ユーザー
     edit: 編集
     logout: ログアウト
