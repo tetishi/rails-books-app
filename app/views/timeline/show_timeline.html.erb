@@ -1,0 +1,7 @@
+<h2>投稿一覧</h2>
+<ul>
+  <% @posts.each do |post| %>
+    <p><%= post.updated_at.strftime("%Y/%m/%d %H:%M")%></p>
+    <li><%= p link_to post.title, book_path(post.id) %></li>
+  <% end %> 
+</ul>

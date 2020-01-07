@@ -1,5 +1,6 @@
-class FriendshipsController < ApplicationController
+# frozen_string_literal: true
 
+class FriendshipsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user
 
