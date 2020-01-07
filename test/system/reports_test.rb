@@ -4,6 +4,7 @@ class ReportsTest < ApplicationSystemTestCase
   include Warden::Test::Helpers
 
   setup do
+    Warden.test_mode!
     @report = reports(:one)
     @user = users(:user1)
     login_as(@user)
