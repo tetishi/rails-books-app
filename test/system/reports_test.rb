@@ -1,8 +1,12 @@
 require "application_system_test_case"
 
 class ReportsTest < ApplicationSystemTestCase
+  include Warden::Test::Helpers
+
   setup do
     @report = reports(:one)
+    @user = users(:user1)
+    login_as(@user)
   end
 
   test "visiting the index" do
@@ -14,9 +18,9 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on "New Report"
 
-    fill_in "Body", with: @report.body
-    fill_in "Title", with: @report.title
-    click_on "Create Report"
+    fill_in "タイトル", with: @report.title
+    fill_in "内容", with: @report.body
+    click_on "登録する"
 
     assert_text "Report was successfully created"
     click_on "Back"
@@ -26,9 +30,9 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on "Edit", match: :first
 
-    fill_in "Body", with: @report.body
-    fill_in "Title", with: @report.title
-    click_on "Update Report"
+    fill_in "タイトル", with: @report.title
+    fill_in "内容", with: @report.body
+    click_on "更新する"
 
     assert_text "Report was successfully updated"
     click_on "Back"
