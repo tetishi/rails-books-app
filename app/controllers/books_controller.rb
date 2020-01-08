@@ -25,6 +25,8 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
+    @book.user = current_user
+
     if @book.save
       redirect_to @book, notice: t("activerecord.attributes.book.created")
     else

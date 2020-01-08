@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index]
+  resources :users do
+    member do
+      get :timeline, to: "timeline#show"
+    end
+  end
   resources :books
+  resources :friendships, only: [:create, :destroy]
 end
