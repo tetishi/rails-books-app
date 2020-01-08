@@ -32,9 +32,9 @@ class BooksTest < ApplicationSystemTestCase
 
   test "updating a Book" do
     visit books_url
-    click_on "編集", match: :first
+    click_on "編集", match: :prefer_exact
 
-    assert_selector "h2", text: "ユーザ編集"
+    assert_selector "h1", text: "Editing Book"
 
     fill_in "タイトル", with: @book.title
     fill_in "メモ", with: @book.memo
