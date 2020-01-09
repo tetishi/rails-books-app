@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -5,12 +7,11 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user
     @comment.save
-    redirect_to @commentable, notice: "Your comment was successfully posted."
+    redirect_to @commentable, notice: t("activerecord.attributes.comment.posted")
   end
 
   private
-
     def comment_params
-      params.require(:comment).permit(:body, :user_id) # I added :user_id
+      params.require(:comment).permit(:body, :user_id)
     end
 end
