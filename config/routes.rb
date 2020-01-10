@@ -13,12 +13,20 @@ Rails.application.routes.draw do
     get "sign_out", to: "users/sessions#destroy"
   end
 
+  resources :reports
   resources :users, only: [:show, :index]
   resources :users do
     member do
       get :timeline, to: "timeline#show"
     end
   end
-  resources :books
+
+  resources :books do
+    resources :comments, module: :books
+  end
+  resources :reports do
+    resources :comments, module: :reports
+  end
+
   resources :friendships, only: [:create, :destroy]
 end

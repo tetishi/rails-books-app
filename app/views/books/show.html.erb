@@ -20,7 +20,10 @@
 	<%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<% if @book.user_id == current_user.id %>
+<% if @book.user == current_user %>
   <%= link_to t('activerecord.attributes.book.show'), edit_book_path(@book) %> |
 <% end %>
 <%= link_to t('activerecord.attributes.book.back'), books_path %>
+
+<%= render partial: "comments/comments", locals: {commentable: @book} %>
+<%= render partial: "comments/form", locals: {commentable: @book} %>

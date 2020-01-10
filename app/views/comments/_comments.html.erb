@@ -1,0 +1,11 @@
+<h3><%= t('activerecord.models.comment')  %></h3>
+<% commentable.comments.each do |comment| %>
+  <p><%= link_to t('activerecord.attributes.comment.user_detail'), user_path(comment.user) %></p>
+  <p><%= comment.body %></p>
+
+  <% if comment.user_id == current_user.id %>
+    <%= link_to t('activerecord.attributes.comment.destroy'), [commentable, comment], method: :delete, data: { confirm: t("activerecord.attributes.book.are_you_sure") } %>
+  <% end %>
+
+  <br>
+<% end %>
