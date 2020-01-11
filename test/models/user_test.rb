@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   setup do
@@ -9,26 +9,20 @@ class UserTest < ActiveSupport::TestCase
     @user3 = users(:user3)
   end
 
-  test 'user1 は user2 をフォローする' do
+  test "user1 は user2 をフォローする" do
     @user1.follow(users(:user2))
     assert @user1.following.include?(users(:user2))
   end
 
-  test 'user1 は user2 をアンフォローする' do
+  test "user1 は user2 をアンフォローする" do
     @user1.follow(users(:user2))
     @user1.unfollow(users(:user2))
     assert_not @user1.following.include?(users(:user2))
   end
 
-  test 'ユーザーのフォロー状態をみる' do
+  test "ユーザーのフォロー状態をみる" do
     @user1.follow(users(:user2))
     assert @user1.following?(users(:user2))
     assert_not @user1.following?(users(:user3))
   end
-
-  # test 'create course' do
-  #   user = User.new
-  #   assert_not user.save
-  #   # assert true
-  # end
 end

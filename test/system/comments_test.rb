@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "application_system_test_case"
 
 class CommentsTest < ApplicationSystemTestCase
@@ -13,23 +15,23 @@ class CommentsTest < ApplicationSystemTestCase
   test "visiting the book comment index" do
     visit books_url
     click_on "表示", match: :first
-    assert_selector "h3", text: "Comments"
+    assert_selector "h3", text: "コメント"
   end
 
   test "visiting the report comment index" do
     visit reports_url
-    click_on "Show", match: :first
-    assert_selector "h3", text: "Comments"
+    click_on "表示", match: :first
+    assert_selector "h3", text: "コメント"
   end
 
   test "creating a Comment" do
     visit books_url
     click_on "表示", match: :first
 
-    fill_in "Add a comment", with: "コメントした"
+    fill_in "コメント記入", with: "コメントした"
     click_on "登録する"
 
-    assert_text "Your comment was successfully posted."
+    assert_text "コメントが追加されました"
     click_on "戻る"
   end
 
@@ -37,26 +39,28 @@ class CommentsTest < ApplicationSystemTestCase
     visit books_url
     click_on "表示", match: :first
 
-    fill_in "Add a comment", with: "コメントした"
+    fill_in "コメント記入", with: "コメントした"
     click_on "登録する"
 
+    assert_text "コメントが追加されました"
+
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "削除", match: :first
     end
 
-    assert_text "translation missing: ja.books.comments.destroy.notice"
+    click_on "戻る"
   end
 
+  test "visiting the user who wrote a Comment" do
+    visit books_url
+    click_on "表示", match: :first
 
-#   test "updating a Report" do
-#     visit reports_url
-#     click_on "Edit", match: :first
+    fill_in "コメント記入", with: "コメントした"
+    click_on "登録する"
 
-#     fill_in "タイトル", with: @report.title
-#     fill_in "内容", with: @report.body
-#     click_on "更新する"
+    assert_text "コメントが追加されました"
 
-#     assert_text "Report was successfully updated"
-#     click_on "Back"
-#   end
+    click_on "ユーザー詳細", exact: :first
+    assert_selector "h1", text: "プロフィール"
+  end
 end
