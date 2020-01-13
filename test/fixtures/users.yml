@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+# one: {}
+# column: value
+#
+# two: {}
+# column: value
+
+user1:
+  email: yamada@gmail.com
+  zipcode: 2544498
+  address: 鳥取県
+  profile: 鳥取県出身の山田太郎です。
+user2:
+  email: jiro@gmail.com
+  zipcode: 3233922
+  address: 佐賀県
+  profile: 佐賀県出身の山田次郎です。
+user3:
+  email: honda@gmail.com
+  zipcode: 3240932
+  address: 北海道
+  profile: 北海道に住んでいます。
