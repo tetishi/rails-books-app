@@ -246,7 +246,6 @@ GEM
       rack (>= 1.1)
       rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
-    rmagick  (4.0.0)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
     ruby_dep (1.5.0)
@@ -340,7 +339,6 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rails
-  rmagick
   sass-rails (>= 6)
   selenium-webdriver
   spring
