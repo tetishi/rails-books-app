@@ -30,8 +30,8 @@ Kernel configured for up to 4 processors.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3
 Primary memory available: 8.00 gigabytes
-Default processor set: 431 tasks, 2140 threads, 4 processors
-Load average: 4.01, Mach factor: 0.55
+Default processor set: 399 tasks, 2307 threads, 4 processors
+Load average: 2.41, Mach factor: 1.59
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
