@@ -1,5 +1,5 @@
 current directory: /Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ed25519-1.2.4/ext/ed25519_ref10
-/Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/bin/ruby -I /Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200201-67106-i5fkx5.rb extconf.rb
+/Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/bin/ruby -I /Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200203-10843-1t4qq37.rb extconf.rb
 creating Makefile
 
 current directory: /Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ed25519-1.2.4/ext/ed25519_ref10
@@ -30,4 +30,4 @@ linking shared-object ed25519_ref10.bundle
 
 current directory: /Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ed25519-1.2.4/ext/ed25519_ref10
 make "DESTDIR=" install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ed25519_ref10.bundle ./.gem.20200201-67106-7hwtwx
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ed25519_ref10.bundle ./.gem.20200203-10843-65wwzi

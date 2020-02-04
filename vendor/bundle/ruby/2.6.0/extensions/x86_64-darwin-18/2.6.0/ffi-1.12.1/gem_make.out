@@ -1,5 +1,5 @@
 current directory: /Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ffi-1.12.1/ext/ffi_c
-/Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/bin/ruby -I /Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200201-67106-1w3lk3r.rb extconf.rb
+/Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/bin/ruby -I /Users/tetsuroishida/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200203-10843-18i40mb.rb extconf.rb
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi... no
 checking for shlwapi.h... no
@@ -138,4 +138,4 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.bundle
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20200201-67106-kedrgd
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20200203-10843-z6edsd

@@ -13,31 +13,23 @@ Gem::Specification.new do |s|
   s.email = "mike@dvorkin.net".freeze
   s.homepage = "https://github.com/awesome-print/awesome_print".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.0.3".freeze
+  s.rubygems_version = "3.1.2".freeze
   s.summary = "Pretty print Ruby objects with proper indentation and colors".freeze
 
-  s.installed_by_version = "3.0.3" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.1.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
+  end
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rspec>.freeze, [">= 3.0.0"])
-      s.add_development_dependency(%q<appraisal>.freeze, [">= 0"])
-      s.add_development_dependency(%q<fakefs>.freeze, [">= 0.2.1"])
-      s.add_development_dependency(%q<sqlite3>.freeze, [">= 0"])
-      s.add_development_dependency(%q<nokogiri>.freeze, [">= 1.6.5"])
-      s.add_development_dependency(%q<simplecov>.freeze, [">= 0"])
-      s.add_development_dependency(%q<codeclimate-test-reporter>.freeze, [">= 0"])
-    else
-      s.add_dependency(%q<rspec>.freeze, [">= 3.0.0"])
-      s.add_dependency(%q<appraisal>.freeze, [">= 0"])
-      s.add_dependency(%q<fakefs>.freeze, [">= 0.2.1"])
-      s.add_dependency(%q<sqlite3>.freeze, [">= 0"])
-      s.add_dependency(%q<nokogiri>.freeze, [">= 1.6.5"])
-      s.add_dependency(%q<simplecov>.freeze, [">= 0"])
-      s.add_dependency(%q<codeclimate-test-reporter>.freeze, [">= 0"])
-    end
+  if s.respond_to? :add_runtime_dependency then
+    s.add_development_dependency(%q<rspec>.freeze, [">= 3.0.0"])
+    s.add_development_dependency(%q<appraisal>.freeze, [">= 0"])
+    s.add_development_dependency(%q<fakefs>.freeze, [">= 0.2.1"])
+    s.add_development_dependency(%q<sqlite3>.freeze, [">= 0"])
+    s.add_development_dependency(%q<nokogiri>.freeze, [">= 1.6.5"])
+    s.add_development_dependency(%q<simplecov>.freeze, [">= 0"])
+    s.add_development_dependency(%q<codeclimate-test-reporter>.freeze, [">= 0"])
   else
     s.add_dependency(%q<rspec>.freeze, [">= 3.0.0"])
     s.add_dependency(%q<appraisal>.freeze, [">= 0"])

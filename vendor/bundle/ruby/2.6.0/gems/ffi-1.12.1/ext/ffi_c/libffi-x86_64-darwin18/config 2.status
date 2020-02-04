@@ -439,8 +439,8 @@ gives unlimited permission to copy, distribute and modify it."
 
 ac_pwd='/Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ffi-1.12.1/ext/ffi_c/libffi-x86_64-darwin18'
 srcdir='/Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ffi-1.12.1/ext/ffi_c/libffi'
-INSTALL='/usr/bin/install -c'
-MKDIR_P='/Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ffi-1.12.1/ext/ffi_c/libffi/install-sh -c -d'
+INSTALL='/usr/local/bin/ginstall -c'
+MKDIR_P='/usr/local/bin/gmkdir -p'
 AWK='awk'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
@@ -607,7 +607,7 @@ old_postinstall_cmds='chmod 644 $oldlib~$RANLIB $tool_oldlib'
 old_postuninstall_cmds=''
 old_archive_cmds='$AR $AR_FLAGS $oldlib$oldobjs~$RANLIB $tool_oldlib'
 lock_old_archive_extraction='yes'
-CC='clang'
+CC='gcc'
 CFLAGS=' -Wall -fexceptions'
 compiler='g++'
 GCC='yes'
@@ -747,9 +747,9 @@ predeps_CXX=''
 postdeps_CXX=''
 compiler_lib_search_path_CXX=''
 
-LTCC='clang'
+LTCC='gcc'
 LTCFLAGS=''
-compiler='clang'
+compiler='gcc'
 
 # A function that is used when there is no print builtin or printf.
 func_fallback_echo ()
@@ -923,7 +923,7 @@ S["MAINTAINER_MODE_FALSE"]=""
 S["MAINTAINER_MODE_TRUE"]="#"
 S["PRTDIAG"]=""
 S["CXXCPP"]="g++ -E"
-S["CPP"]="clang -E"
+S["CPP"]="gcc -E"
 S["LT_SYS_LIBRARY_PATH"]=""
 S["OTOOL64"]=":"
 S["OTOOL"]="otool"
@@ -950,7 +950,7 @@ S["am__fastdepCCAS_FALSE"]=""
 S["am__fastdepCCAS_TRUE"]="#"
 S["CCASDEPMODE"]="depmode=none"
 S["CCASFLAGS"]=""
-S["CCAS"]="clang"
+S["CCAS"]="gcc"
 S["am__fastdepCXX_FALSE"]=""
 S["am__fastdepCXX_TRUE"]="#"
 S["CXXDEPMODE"]="depmode=none"
@@ -968,11 +968,11 @@ S["am__include"]="include"
 S["DEPDIR"]=".deps"
 S["OBJEXT"]="o"
 S["EXEEXT"]=""
-S["ac_ct_CC"]="clang"
+S["ac_ct_CC"]="gcc"
 S["CPPFLAGS"]=""
 S["LDFLAGS"]=""
 S["CFLAGS"]=" -Wall -fexceptions"
-S["CC"]="clang"
+S["CC"]="gcc"
 S["AM_BACKSLASH"]="\\"
 S["AM_DEFAULT_VERBOSITY"]="1"
 S["AM_DEFAULT_V"]="$(AM_DEFAULT_VERBOSITY)"
@@ -984,7 +984,7 @@ S["am__leading_dot"]="."
 S["SET_MAKE"]=""
 S["AWK"]="awk"
 S["mkdir_p"]="$(MKDIR_P)"
-S["MKDIR_P"]="/Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ffi-1.12.1/ext/ffi_c/libffi/install-sh -c -d"
+S["MKDIR_P"]="/usr/local/bin/gmkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
 S["install_sh"]="${SHELL} /Users/tetsuroishida/Desktop/my_web_apps2/books_app/vendor/bundle/ruby/2.6.0/gems/ffi-1.12.1/ext/ffi_c/libffi/install-sh"
