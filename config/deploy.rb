@@ -53,6 +53,7 @@ set :default_env, { NODE_ENV: "production" }
 set :bundle_path, "./vendor/bundle"
 set :bundle_flags, "--quiet"
 set :bundle_jobs, 1
+set :bundle_gemfile, "rails-books-app-cap/Gemfile"
 
 # puma
 append :rbenv_map_bins, "puma", "pumactl"
