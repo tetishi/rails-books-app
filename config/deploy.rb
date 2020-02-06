@@ -41,16 +41,21 @@ append :linked_dirs, ".bundle", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "
 # set :ssh_options, verify_host_key: :secure
 
 # rbenv
-set :rbenv_type, :tetsuro
-set :rbenv_path, "/home/tetsuro/.anyenv/envs/rbenv"
-set :rbenv_ruby, "2.6.5"
+set :rbenv_type, "/home/tetsuro/.rbenv"
+# set :rbenv_custom_path, "home/tetsuro/.anyenv/envs/rbenv"
+set :rbenv_ruby, File.read(".ruby-version").strip
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w[rake gem bundle ruby rails]
+# set :rbenv_type, :tetsuro
+# set :rbenv_path, "/home/tetsuro/.anyenv/envs/rbenv"
+# set :rbenv_ruby, "2.6.5"
+# set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 
 # node
 set :default_env, { NODE_ENV: "production" }
 
 # bundler
-set :bundle_path, "./vendor/bundle"
+# set :bundle_path, "./vendor/bundle"
 set :bundle_flags, "--quiet"
 set :bundle_jobs, 1
 set :bundle_gemfile, "rails-books-app-cap/Gemfile"
