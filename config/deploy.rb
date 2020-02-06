@@ -52,7 +52,7 @@ set :rbenv_map_bins, %w[rake gem bundle ruby rails]
 set :default_env, { NODE_ENV: "production" }
 
 # bundler
-# set :bundle_path, "./vendor/bundle"
+set :bundle_path, "/home/tetsuro/rails-books-app-cap/vendor/bundle"
 set :bundle_flags, "--quiet"
 set :bundle_jobs, 1
 set :bundle_gemfile, "rails-books-app-cap/Gemfile"
