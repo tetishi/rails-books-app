@@ -317,8 +317,8 @@ DEPENDENCIES
   bcrypt_pbkdf (>= 1.0, < 2.0)
   bootsnap (>= 1.4.2)
   byebug
-  capistrano
-  capistrano-bundler
+  capistrano (~> 3.6)
+  capistrano-bundler (~> 1.6)
   capistrano-rails
   capistrano-rbenv
   capybara (>= 2.15)

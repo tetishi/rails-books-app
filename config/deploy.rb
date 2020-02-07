@@ -54,7 +54,7 @@ set :default_env, { NODE_ENV: "production" }
 # bundler
 set :bundle_path, "/home/tetsuro/rails-books-app-cap/vendor/bundle"
 set :bundle_flags, "--quiet"
-set :bundle_jobs, 1
+# set :bundle_jobs, 1
 set :bundle_gemfile, "rails-books-app-cap/Gemfile"
 
 # puma

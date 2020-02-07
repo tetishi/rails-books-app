@@ -66,9 +66,9 @@ gem "rubocop-rails"
 gem "omniauth"
 gem "omniauth-github"
 gem "dotenv-rails"
-gem "capistrano", require: false
+gem "capistrano", "~> 3.6"
+gem "capistrano-bundler", "~> 1.6"
 gem "capistrano-rails", require: false
 gem "capistrano-rbenv", require: false
 gem "ed25519", ">= 1.2", "< 2.0"
 gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
-gem "capistrano-bundler"
