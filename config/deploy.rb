@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.2"
 
-set :application, "rails-books-app"
+set :application, "rails-books-app-cap"
 set :repo_url, "git@github.com:tetishi/rails-books-app.git"
 set :user, "tetsuro"
 
@@ -13,10 +13,13 @@ set :deploy_to, "/home/tetsuro/rails-books-app-cap"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
+set :scm, :git
 
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
+set :log_level, :debug
+set :format, :pretty
 
 # Default value for :pty is false
 set :pty, true
@@ -59,6 +62,3 @@ set :bundle_path, "/home/tetsuro/rails-books-app-cap/shared/bundle"
 
 # puma
 append :rbenv_map_bins, "puma", "pumactl"
-
-
-set :log_level, :debug
