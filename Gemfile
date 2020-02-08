@@ -43,6 +43,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  # capistrano
+  gem "capistrano", "~> 3.6"
+  gem "capistrano-rails"
+  gem "capistrano-rbenv"
+  gem "capistrano-bundler"
+  gem "ed25519", ">= 1.2", "< 2.0"
+  gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 end
 
 group :test do
@@ -66,9 +73,4 @@ gem "rubocop-rails"
 gem "omniauth"
 gem "omniauth-github"
 gem "dotenv-rails"
-gem "capistrano", "~> 3.6"
-gem "capistrano-bundler", "~> 1.6"
-gem "capistrano-rails", require: false
-gem "capistrano-rbenv", require: false
-gem "ed25519", ">= 1.2", "< 2.0"
-gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
+gem 'therubyracer',  platforms: :ruby
