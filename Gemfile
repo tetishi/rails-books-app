@@ -48,6 +48,7 @@ group :development do
   gem "capistrano-rails"
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
+  gem "capistrano3-puma"
   gem "ed25519", ">= 1.2", "< 2.0"
   gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 end
@@ -73,4 +74,5 @@ gem "rubocop-rails"
 gem "omniauth"
 gem "omniauth-github"
 gem "dotenv-rails"
-gem 'therubyracer',  platforms: :ruby
+gem "therubyracer",  platforms: :ruby
+gem "rmagick"
