@@ -19,10 +19,12 @@ jobs: # ステップの集合
     steps: # 実行可能コマンドの集合
       - checkout # ソースコードを作業ディレクトリにチェックアウトする特別なステップ
 
-      # Bundler のバージョンを指定します
+      - run:
+          name: Update bundler
+          command: gem update bundler
 
       - run:
-          name: Bundler を指定
+          name: Which bundler? # バージョン確認
           command: bundle -v
 
       # バンドルキャッシュを復元します
