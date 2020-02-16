@@ -73,13 +73,10 @@ jobs: # ステップの集合
           command: bin/rails db:schema:load --trace
 
       - run:
-          name: RSpec を並列実行
+          name: Rails test
           command: |
-            bundle exec rspec --profile 10 \
-                              --format RspecJunitFormatter \
-                              --out test_results/rspec.xml \
-                              --format progress \
-                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            bin/rails test
+            bin/rails test:system
 
       # タイミング解析のテスト結果を保存します
 
