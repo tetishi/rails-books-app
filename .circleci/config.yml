@@ -1,7 +1,7 @@
 version: 2.1
-jobs:
-  build:
-    parallelism: 3
+
+executors:
+  default:
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
@@ -16,13 +16,16 @@ jobs:
           POSTGRES_USER: circleci-demo-ruby
           POSTGRES_DB: rails_blog
           POSTGRES_PASSWORD: ""
+
+commands:
+  setup:
     steps:
       - checkout
 
       - run:
           name: Update bundler
           command: gem update bundler
-
+      
       - run:
           name: Which bundler?
           command: bundle -v
@@ -55,6 +58,13 @@ jobs:
           paths:
             - ~/.cache/yarn
 
+jobs:
+  minitest:
+    executor: default
+    steps:
+      - checkout
+      - setup
+      
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
@@ -71,13 +81,27 @@ jobs:
             bin/rails test
             bin/rails test:system
 
-      - store_test_results:
-          path: test_results
-      
+  deploy:
+    executor: default
+    steps:
+      - checkout
+      - setup
+
       - add_ssh_keys:
           fingerprints:
             - ff:09:24:2a:76:9c:c8:ae:f5:64:51:a8:5c:2d:b8:88
 
       - deploy:
           name: Deploy
-          command: bundle exec cap production deploy 
+          command: bundle exec cap production deploy
+
+workflows:
+  minitest-and-deploy
+    jobs:
+      - minitest
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
