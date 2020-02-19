@@ -59,7 +59,7 @@ commands:
             - ~/.cache/yarn
 
 jobs:
-  minitest:
+  test:
     executor: default
     steps:
       - checkout
@@ -98,7 +98,7 @@ jobs:
 workflows:
   minitest-and-deploy:
     jobs:
-      - minitest
+      - test
       - deploy:
           requires:
             - minitest
