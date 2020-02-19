@@ -76,3 +76,4 @@ gem "omniauth-github"
 gem "dotenv-rails"
 gem "therubyracer",  platforms: :ruby
 gem "rmagick"
+gem "minitest-ci"

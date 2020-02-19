@@ -1,0 +1,107 @@
+version: 2.1
+
+executors:
+  default:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: circleci-demo-ruby
+          RAILS_ENV: test
+      - image: circleci/postgres:12.1-alpine
+        environment:
+          POSTGRES_USER: circleci-demo-ruby
+          POSTGRES_DB: rails_blog
+          POSTGRES_PASSWORD: ""
+
+commands:
+  setup:
+    steps:
+      - checkout
+
+      - run:
+          name: Update bundler
+          command: gem update bundler
+      
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      - restore_cache:
+          keys:
+            - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
+            - rails-demo-bundle-v2-
+
+      - run:
+          name: Bundle install
+          command: bundle check --path vendor/bundle || bundle install --deployment
+
+      - save_cache:
+          key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - restore_cache:
+          keys:
+            - rails-demo-yarn-{{ checksum "yarn.lock" }}
+            - rails-demo-yarn-
+
+      - run:
+          name: Yarn install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      - save_cache:
+          key: rails-demo-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Database setup
+          command: bin/rails db:schema:load --trace
+
+      - run: bundle exec bin/webpack
+
+jobs:
+  test:
+    executor: default
+    steps:
+      - checkout
+      - setup
+
+      - run:
+          name: Run test
+          command: |
+            bin/rails test
+            bin/rails test:system
+
+  deploy:
+    executor: default
+    steps:
+      - checkout
+      - setup
+
+      - add_ssh_keys:
+          fingerprints:
+            - ff:09:24:2a:76:9c:c8:ae:f5:64:51:a8:5c:2d:b8:88
+
+      - deploy:
+          name: Deploy
+          command: bundle exec cap production deploy
+
+workflows:
+  test-and-deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master

@@ -14,7 +14,7 @@ threads min_threads_count, max_threads_count
 #
 # port        ENV.fetch("PORT") { 3000 }
 
-bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+bind "unix://#{Rails.root}/shared/tmp/sockets/puma.sock"
 daemonize
 stdout_redirect "#{Rails.root}/log/stdout", "#{Rails.root}/log/stderr"
 
