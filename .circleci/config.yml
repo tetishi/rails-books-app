@@ -96,7 +96,7 @@ jobs:
           command: bundle exec cap production deploy
 
 workflows:
-  minitest-and-deploy
+  minitest-and-deploy:
     jobs:
       - minitest
       - deploy:
