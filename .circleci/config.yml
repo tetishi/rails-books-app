@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   build:
     parallelism: 3
@@ -73,3 +73,11 @@ jobs:
 
       - store_test_results:
           path: test_results
+      
+      - add_ssh_keys:
+          fingerprints:
+            - ff:09:24:2a:76:9c:c8:ae:f5:64:51:a8:5c:2d:b8:88
+
+      - deploy:
+          name: Deploy
+          command: bundle exec cap production deploy 
