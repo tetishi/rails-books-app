@@ -44,7 +44,8 @@ server "160.16.241.152", user: "tetsuro", roles: %w{app db web}
 # --------------
 set :ssh_options, {
    # keys: ["#{ENV.fetch('PRODUCTION_SSH_KEY')}"], 
-   keys: %w[~/.ssh/id_rsa],
+   # keys: %w[~/.ssh/id_rsa],
+   keys: %w[~/.ssh/id_rsa_circleci],
    forward_agent: true,
    auth_methods: %w[publickey],
    port: 52222,
