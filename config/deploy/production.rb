@@ -49,7 +49,6 @@ set :ssh_options, {
    port: 52222,
 }
 # keys: %w[~/.ssh/id_rsa],
-
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
