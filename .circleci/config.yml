@@ -11,6 +11,7 @@ executors:
           PGHOST: 127.0.0.1
           PGUSER: circleci-demo-ruby
           RAILS_ENV: test
+          DATABASE_URL: "postgres://tetsuro@localhost:5432/rails-books-app"
       - image: circleci/postgres:12.1-alpine
         environment:
           POSTGRES_USER: circleci-demo-ruby
