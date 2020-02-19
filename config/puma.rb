@@ -16,7 +16,7 @@ threads min_threads_count, max_threads_count
 
 bind "unix://#{Rails.root}/shared/tmp/sockets/puma.sock"
 daemonize
-stdout_redirect "#{Rails.root}/current/log/stdout", "#{Rails.root}/current/log/stderr"
+stdout_redirect "#{Rails.root}/log/stdout", "#{Rails.root}/log/stderr"
 
 # Specifies the `environment` that Puma will run in.
 #

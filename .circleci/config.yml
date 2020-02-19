@@ -101,7 +101,7 @@ workflows:
       - minitest
       - deploy:
           requires:
-            - test
+            - minitest
           filters:
             branches:
               only: master
