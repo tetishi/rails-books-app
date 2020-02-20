@@ -89,7 +89,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - ff:09:24:2a:76:9c:c8:ae:f5:64:51:a8:5c:2d:b8:88
+            - ed:75:3e:7c:97:7f:1b:fa:3d:5a:82:57:b1:15:06:29
       
       - deploy:
           name: Deploy
