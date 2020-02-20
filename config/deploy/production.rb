@@ -43,13 +43,13 @@ server "160.16.241.152", user: "tetsuro", roles: %w{app db web}
 # Global options
 # --------------
 set :ssh_options, {
-   # keys: ["#{ENV.fetch('PRODUCTION_SSH_KEY')}"], 
-   # keys: %w[~/.ssh/id_rsa],
-   keys: %w[~/.ssh/id_rsa_circleci],
+   keys: ["#{ENV.fetch('PRODUCTION_SSH_KEY')}"], 
    forward_agent: true,
    auth_methods: %w[publickey],
    port: 52222,
 }
+# keys: %w[~/.ssh/id_rsa],
+# keys: %w[~/.ssh/id_rsa_circleci],
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------

@@ -90,10 +90,6 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - ff:09:24:2a:76:9c:c8:ae:f5:64:51:a8:5c:2d:b8:88
-
-      - run:
-          name: Add ssh key
-          command: ssh-add
       
       - deploy:
           name: Deploy
