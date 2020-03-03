@@ -214,9 +214,9 @@ GEM
     parser (2.7.0.2)
       ast (~> 2.4.0)
     public_suffix (4.0.3)
-    puma (4.3.1)
+    puma (4.3.3)
       nio4r (~> 2.0)
-    puma (4.3.1-java)
+    puma (4.3.3-java)
       nio4r (~> 2.0)
     rack (2.1.2)
     rack-proxy (0.6.5)
@@ -344,6 +344,8 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.7.1-java)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
     xpath (3.2.0)
       nokogiri (~> 1.8)
@@ -379,7 +381,7 @@ DEPENDENCIES
   minitest-ci
   omniauth
   omniauth-github
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.1)
   rails-i18n
   rmagick
